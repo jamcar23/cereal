@@ -776,6 +776,9 @@ struct Plan {
     mpc2 @2;
     mpc3 @3;
     model @4;
+    cruiseGas @5;
+    cruiseCoast @6;
+    cruiseBrake @7;
   }
 }
 
