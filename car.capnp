@@ -184,6 +184,8 @@ struct CarState {
   leftBlindspot @33 :Bool; # Is there something blocking the left lane change
   rightBlindspot @34 :Bool; # Is there something blocking the right lane change
 
+  headLights @37 :HeadLightsState;
+
   struct WheelSpeeds {
     # optional wheel speeds
     fl @0 :Float32;
@@ -232,6 +234,20 @@ struct CarState {
       setCruise @9;
       resumeCruise @10;
       gapAdjustCruise @11;
+    }
+  }
+
+  struct HeadLightsState {
+    active @0 :Type;
+    autoLights @1 :Bool; # True if automatic lights are supported and turned on.
+    autoHighBeams @2 :Bool; # True if auto high beams are supported and turned on.
+    transitioning @3 :Bool; # True if the car is transitioning between light states.
+
+    enum Type {
+      unknown @0;
+      dayTimeRunning @1;
+      nightTime @2;
+      highBeams @3;
     }
   }
 }
