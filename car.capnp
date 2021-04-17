@@ -199,12 +199,12 @@ struct CarState {
   }
 
   struct HeadLightsState {
-    active @0 :Type;
+    active @0 :HeadLightType;
     autoLights @1 :Bool; # True if automatic lights are supported and turned on.
     autoHighBeams @2 :Bool; # True if auto high beams are supported and turned on.
     transitioning @3 :Bool; # True if the car is transitioning between light states.
 
-    enum Type {
+    enum HeadLightType {
       unknown @0;
       dayTimeRunning @1;
       nightTime @2;
