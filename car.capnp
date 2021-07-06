@@ -197,6 +197,9 @@ struct CarState {
   engineRPM @37 :Float32;
   headLights @38 :HeadLightsState;
 
+  speedLimitValid @39 :Bool;
+  speedLimitKph @40 :Float32;
+
   struct WheelSpeeds {
     # optional wheel speeds
     fl @0 :Float32;
